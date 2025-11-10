@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Smart Career Roadmap - Login / Signup</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+</head>
+<body>
+  <!-- Flash Messages -->
+  <div class="flash-messages">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="flash-message {{ category }}">
+            {{ message }}
+            <button class="flash-close">&times;</button>
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+  </div>
+
+  <div class="container">
+    <div class="login-form">
+      <h1 class="logo">AI Smart Career Roadmap</h1>
+
+      <!-- Login Form -->
+      <div id="login-box" class="form-box active">
+        <h2>Welcome Back</h2>
+        <form action="{{ url_for('auth_bp.login') }}" method="POST" id="loginForm">
+          <div class="input-group">
+            <label>Email Address</label>
+            <input type="email" name="email" placeholder="Enter your email" required>
+          </div>
+          <div class="input-group">
+            <label>Password</label>
+            <input type="password" name="password" placeholder="Enter your password" required>
+          </div>
+          <button type="submit">Sign In</button>
+          <p class="small-text">
+            Don't have an account? <a href="#" onclick="switchForm('signup')">Sign up</a>
+          </p>
+          <p class="small-text">
+            <a href="#" onclick="showForgotPassword()">Forgot password?</a>
+          </p>
+        </form>
+      </div>
+
+      <!-- Signup Form -->
+      <div id="signup-box" class="form-box">
+        <h2>Create Account</h2>
+        <form action="{{ url_for('auth_bp.signup') }}" method="POST" id="signupForm">
+          <div class="input-group">
+            <label>Full Name</label>
+            <input type="text" name="username" placeholder="Enter your full name" required>
+          </div>
+          <div class="input-group">
+            <label>Email</label>
+            <input type="email" name="email" placeholder="Enter your email" required>
+          </div>
+          <div class="input-group">
+            <label>Password</label>
+            <input type="password" name="password" placeholder="Create a password" required minlength="6">
+          </div>
+          <div class="input-group">
+            <label>Confirm Password</label>
+            <input type="password" name="confirm_password" placeholder="Confirm your password" required>
+          </div>
+          <button type="submit">Create Account</button>
+          <p class="small-text">
+            Already have an account? <a href="#" onclick="switchForm('login')">Sign in</a>
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <div class="right-panel">
+      <div class="dots"></div>
+      <div class="circle big"></div>
+      <div class="circle small"></div>
+      <div class="diamond"></div>
+      <div class="square blue"></div>
+      <div class="line vertical"></div>
+      <div class="line curved"></div>
+    </div>
+  </div>
+
+  <!-- Forgot Password Modal -->
+  <div class="modal" id="forgotPasswordModal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('forgotPasswordModal')">&times;</span>
+      <h2>Reset Password</h2>
+      <input type="email" id="reset-email" placeholder="Enter your email" required>
+      <button onclick="sendResetLink()">Send Reset Link</button>
+    </div>
+  </div>
+
+  <footer>
+    <a href="#">Contact</a>
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms of Service</a>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/login.js') }}"></script>
+</body>
+</html>

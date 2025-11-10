@@ -1,0 +1,275 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #fff;
+  color: #333;
+}
+
+/* Container */
+.container {
+  flex: 1;
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Login Form */
+.login-form {
+  flex: 1;
+  padding: 60px;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #0f62fe;
+  margin-bottom: 20px;
+}
+
+.login-form h2 {
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+.login-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.login-form input:hover,
+.login-form input:focus {
+  border-color: #007BFF;
+  transform: scale(1.03); 
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+}
+
+
+.login-form button {
+  width: 100%;
+  background: #0f62fe;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  margin-top: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.login-form button:hover {
+  background: #0353e9;
+  transform: scale(1.05);
+}
+
+.options {
+  margin: 15px 0;
+  font-size: 14px;
+}
+
+.small-text {
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+.small-text a {
+  color: #0f62fe;
+  text-decoration: none;
+}
+
+.small-text a:hover {
+  text-decoration: underline;
+}
+
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 10px;
+  width: 350px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  animation: popIn 0.3s ease-out;
+}
+
+.modal-content h2 {
+  margin-bottom: 10px;
+  color: #d8000c;
+}
+
+.modal-content p {
+  margin-bottom: 20px;
+}
+
+.modal-content button {
+  background: #0078ff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.modal-content button:hover {
+  transform: scale(1.05);
+  background: #0353e9;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+}
+
+@keyframes popIn {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+
+/* Right Panel (Abstract Design) */
+.right-panel {
+  flex: none;
+  width: 55%;   
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f9f9fb;
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* Dots background */
+.dots {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: radial-gradient(#ddd 1px, transparent 1px);
+  background-size: 25px 25px;
+}
+
+/* Shapes */
+.circle {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.circle.big {
+  width: 100px; height: 100px;
+  background: rgba(175, 175, 255, 0.3);
+  top: 30%; left: 60%;
+}
+
+.circle.small {
+  width: 40px; height: 40px;
+  background: #0f62fe;
+  top: 50%; left: 40%;
+}
+
+.diamond {
+  position: absolute;
+  width: 60px; height: 60px;
+  background: #a56eff;
+  transform: rotate(45deg);
+  top: 40%; left: 50%;
+}
+
+.square.blue {
+  position: absolute;
+  width: 50px; height: 50px;
+  background: #4589ff;
+  top: 65%; left: 55%;
+}
+
+.line.vertical {
+  position: absolute;
+  width: 2px;
+  height: 200px;
+  background: linear-gradient(#8a3ffc, transparent);
+  top: 20%; left: 70%;
+}
+
+.line.curved {
+  position: absolute;
+  width: 200px; height: 200px;
+  border: 2px solid #bbb;
+  border-radius: 50%;
+  top: 50%; left: 30%;
+  border-color: transparent transparent #bbb #bbb;
+}
+
+.form-box {
+  display: none;
+}
+.form-box.active {
+  display: block;
+}
+
+/* Keep styling consistent */
+#signup-box input,
+#signup-box button,
+#signup-box label {
+  margin-bottom: 15px;
+}
+
+/* Footer */
+footer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 12px;
+  padding: 15px;
+  background: #000;
+  color: #fff;
+}
+
+footer a {
+  color: #0f62fe;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+footer span {
+  margin-left: auto;
+  font-style: italic;
+}

@@ -1,0 +1,39 @@
+career-smart-path/
+├─ app/
+│  ├─ __init__.py              # app factory, register blueprints
+│  ├─ datasets/
+│  │  ├─ cleaned_data/
+│  │  │  └─ career_compass.csv # merged/cleaned CSV
+│  ├─ routes/
+│  │  ├─ auth_routes.py        # login & signup
+│  │  ├─ career_routes.py      # chat session for 10th students (integrate RAG retrieval here)
+│  │  └─ dashboard_routes.py   # dashboard after session (display roadmaps)
+│  ├─ utils/
+│  │  ├─ db_utils.py           # relational DB handling (e.g., user sessions)
+│  │  └─ rag_utils.py          # NEW: RAG retrieval functions (e.g., get_retriever)
+│  ├─ templates/
+│  │  ├─ auth/
+│  │  │  └─ login.html         # login/signup page
+│  │  ├─ career/
+│  │  │  └─ chat.html          # chat (Career Compass Chat)
+│  │  └─ dashboard/
+│  │     └─ index.html         # career dashboard
+│  ├─ static/
+│  │  ├─ css/
+│  │  │  ├─ login.css
+│  │  │  └─ chat.css
+│  │  └─ js/
+│  │     ├─ login.js
+│  │     ├─ chat.js
+│  │     └─ dashboard.js       # optional for dynamic roadmap display
+│  ├─ scripts/                 # NEW: Scripts for data ingestion/setup
+│  │  └─ ingest_data.py        # Chunk and ingest CSV into vector DB
+│  └─ db/                      # NEW: Persistent storage for vector DB
+│     └─ chroma/               # ChromaDB files (auto-generated after ingestion)
+├─ run.py                      # App entry point (e.g., app.run())
+├─ requirements.txt            # Add: langchain, langchain-openai, langchain-chroma, chromadb, openai, sentence-transformers (if using HF embeddings), python-dotenv
+├─ data_preprocessing.ipynb    # Your preprocessing/merging notebook
+└─ .env                        # Keys: OPENAI_API_KEY=your_key
+
+--> env = conda create -n venv_career python=3.11
+

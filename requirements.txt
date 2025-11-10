@@ -1,0 +1,30 @@
+# --- Core LangChain Stack ---
+langchain-core==0.3.13
+langchain-community==0.3.13
+langchain-huggingface==1.0.0
+langchain-chroma==0.1.5
+
+# --- Vector Database ---
+chromadb==0.5.3
+
+# --- FastAPI & Web Server ---
+fastapi==0.115.0
+uvicorn==0.30.6
+
+# --- Core Dependencies ---
+pydantic==2.9.2
+typing-extensions>=4.12.2
+anyio>=4.4.0
+starlette==0.37.2
+
+# --- HuggingFace & ML ---
+transformers>=4.44.2
+sentence-transformers>=3.0.1
+torch>=2.3.0
+numpy>=1.26.4
+scikit-learn>=1.5.1
+
+# --- Utilities ---
+python-dotenv>=1.0.1
+tqdm>=4.66.5
+requests>=2.32.3

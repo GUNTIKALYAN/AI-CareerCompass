@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Compass - Your Future Starts Here</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+</head>
+<body>
+    <!-- Background Particles (Optional) -->
+    <div class="bg-particles" id="particles"></div>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="nav-left">
+            <div class="logo">Career Compass</div>
+        </div>
+        <div class="nav-right">
+            <span class="user-name">Hello, {{ user_name }}</span>
+            <a href="{{ url_for('auth_bp.logout') }}" class="logout-btn">Logout</a>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Welcome Section -->
+        <div class="welcome-section">
+            <h2>Welcome back {{ user_name }}!</h2>
+            <p>Your journey to the perfect career path continues. Let's explore your opportunities!</p>
+        </div>
+
+        <!-- Tools Section -->
+        <div class="tools-section">
+            <div class="section-header">
+                <h3>Explore Your Career Journey</h3>
+                <p>Choose a tool to get personalized insights and recommendations</p>
+            </div>
+
+            <div class="tools-grid">
+                <!-- Career Path Explorer -->
+                <div class="tool-card career-path" onclick="openCareerPathExplorer()">
+                    <div class="tool-icon-wrapper">🚀</div>
+                    <h4>Career Path Explorer</h4>
+                    <p>Explore a detailed roadmap for your chosen career journey.</p>
+                    <div class="tool-features">
+                        <span class="feature-tag">Detailed Roadmap</span>
+                    </div>
+                    <button class="tool-button">Explore Paths ➜</button>
+                </div>
+
+                <!-- AI Matching Tool -->
+                <div class="tool-card ai-matching" onclick="openAIMatching()">
+                    <div class="tool-icon-wrapper">🤖</div>
+                    <h4>AI Matching</h4>
+                    <p>Get instant, personalized career recommendations.</p>
+                    <div class="tool-features">
+                        <span class="feature-tag">AI-Powered</span>
+                    </div>
+                    <button class="tool-button">Start Matching ➜</button>
+                </div>
+
+                <!-- Learning Resources -->
+                <div class="tool-card resources" onclick="openResources()">
+                    <div class="tool-icon-wrapper">📚</div>
+                    <h4>Learning Resources</h4>
+                    <p>Access curated learning materials for your goals.</p>
+                    <div class="tool-features">
+                        <span class="feature-tag">Educational Materials</span>
+                    </div>
+                    <button class="tool-button">Browse Resources ➜</button>
+                </div>
+
+                <!-- Quiz -->
+                <div class="tool-card quiz" onclick="openQuiz()">
+                    <div class="tool-icon-wrapper">🧩</div>
+                    <h4>Interest & Skills Quiz</h4>
+                    <p>Take a comprehensive assessment to discover your strengths.</p>
+                    <div class="tool-features">
+                        <span class="feature-tag">Aptitude Test</span>
+                    </div>
+                    <button class="tool-button">Start Quiz ➜</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Matching Modal -->
+    <div class="modal" id="aiMatchingModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Your AI Matching Results</h3>
+                <button class="close-modal" onclick="closeModal('aiMatchingModal')">×</button>
+            </div>
+            <div id="aiMatchingContent">
+                <div class="loading">Analyzing your answers…</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Career Path Detail Modal -->
+    <div class="modal" id="careerExplorerModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Your Career Roadmap</h3>
+                <button class="close-modal" onclick="closeModal('careerExplorerModal')">×</button>
+            </div>
+            <div id="careerExplorerContent">
+                <p>Select a career from AI Matching to view its detailed roadmap.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html>

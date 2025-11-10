@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Compass Chat</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chat.css') }}">
+</head>
+<body>
+    <div class="chat-container" data-username="{{ user_name }}">
+        <div class="chat-header">
+            <div class="header-content">
+                <div class="avatar">🎓</div>
+                <h1 class="header-title">Career Compass</h1>
+                <p class="header-subtitle">Your AI Career Counselor</p>
+            </div>
+        </div>
+
+        <div class="chat-messages" id="chat-messages">
+            {% for msg in chat_history %}
+                <div class="message {{ 'bot' if msg.ai_response else 'user' }}">
+                    <div class="message-bubble">
+                        {{ msg.ai_response if msg.ai_response else msg.user_message }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="typing-indicator" id="typing-indicator">
+            <div class="typing-bubble">
+                <div class="typing-dots">
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="chat-input-container">
+            <input type="text" id="user-input" class="input-field" placeholder="Type your response..." maxlength="500">
+            <button id="send-button" class="send-button">➤</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+</body>
+</html>
