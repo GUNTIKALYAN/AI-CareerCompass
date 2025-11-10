@@ -9,3 +9,6 @@ instance/
 .DS_Store
 Thumbs.db
 venv_career/
+app/db/chroma/csv_data/embeddings.pkl
+app/db/chroma/csv_data/f63357fe-0e39-485c-9d9d-901e4915422b/
+app/db/chroma/user_sessions
