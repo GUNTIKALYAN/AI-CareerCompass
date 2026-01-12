@@ -197,7 +197,7 @@ cp .env.example .env
 python app/scripts/ingest_data.py
 
 # 6. Run app
-
+python run.py
 ```
 
 
