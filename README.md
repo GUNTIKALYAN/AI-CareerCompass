@@ -41,7 +41,7 @@ The platform provides dynamic career roadmaps that evolve as the student grows (
 
 ## Objective
 
-AI-CareerPath aims to build a trustworthy, explainable, and grounded AI career advisor through:
+AI-CareerCompass aims to build a trustworthy, explainable, and grounded AI career advisor through:
 
 - RAG-driven career suggestions grounded in O*NET occupational data
 - Structured multi-stage dialogue capturing academic, behavioural, and motivational traits
@@ -69,7 +69,7 @@ O*NET is the world’s most structured, standardized career database containing:
 - Realistic roadmaps
 - [Source](https://www.onetcenter.org/db_releases.html)
 
-## AI-CareerPath Architecture
+## AI-CareerCompass Architecture
 
 #### Pipeline Overview
 
