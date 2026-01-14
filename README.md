@@ -1,8 +1,8 @@
-# AI-CareerPath: A RAG-Driven Conversational Framework for Personalized Career Guidance
+# AI-CareerCompass: A RAG-Driven Conversational Framework for Personalized Career Guidance
 
 **Your career is not chosen by marks — it’s discovered by understanding yourself.**
 
-> AI-CareerPath is a Retrieval-Augmented Generation (RAG) and conversational AI framework designed to deliver data-driven, personalized career counselling for Indian students after Class 10 and Class 12. It combines structured multi-stage dialogue, weighted scoring, vector retrieval, and LLM reasoning to recommend career paths rooted in real occupational data, not guesswork.
+> AI-CareerCompass is a Retrieval-Augmented Generation (RAG) and conversational AI framework designed to deliver data-driven, personalized career counselling for Indian students after Class 10 and Class 12. It combines structured multi-stage dialogue, weighted scoring, vector retrieval, and LLM reasoning to recommend career paths rooted in real occupational data, not guesswork.
 
 ## This is the dashboard:
 ![Dashboard](./images/dashboard.png)
