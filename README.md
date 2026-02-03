@@ -228,5 +228,12 @@ This project is licensed under the **MIT License** - see [LICENSE](LICENSE) file
 - LangChain & Chroma
 - Mentors, teachers, and Team Beacons
 
+---
+<div align="center">
+
+*Happy Learning*
+
+</div>
+
 
 
